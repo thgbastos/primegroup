@@ -20,7 +20,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
 
   int _selectedIndex = 0; // Índice da aba selecionada
 
-  // Função para mudar de aba
+  // Função para mudar de aba - Menu Rodapé
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -39,20 +39,20 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
               fit: BoxFit.cover,
             ),
           ),
-          // Rodapé
+          // Area da descrição do serviço
           Positioned(
             bottom: 0,
             left: 0,
             right: 0,
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.4, // Altura do rodapé
-              decoration: BoxDecoration(
+              height: MediaQuery.of(context).size.height * 0.4, // Altura da área
+              decoration: const BoxDecoration(
                 color: Color(0xff226690),
-                borderRadius: const BorderRadius.only(
+                borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   topRight: Radius.circular(20),
                 ),
-                boxShadow: const [
+                boxShadow: [
                   BoxShadow(
                     color: Colors.black26,
                     blurRadius: 10,
@@ -89,6 +89,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
 
                     const SizedBox(height: 25,),
 
+                    //Botão Get Started
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.8, // Largura do botão,
                       child: TextButton(
@@ -114,20 +115,10 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
         ],
       ),
 
+      //Barra de Navegação de Rodapé
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           color: Color(0xff226690), // Cor de fundo da barra
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20), // Arredonda o canto superior esquerdo
-            topRight: Radius.circular(20), // Arredonda o canto superior direito
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26, // Sombra para destacar a barra
-              blurRadius: 5,
-              spreadRadius: 1,
-            ),
-          ],
         ),
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
