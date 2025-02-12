@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter3/appController.dart';
-import '../listVewBase.dart';
+import 'package:flutter3/controllers/appController.dart';
+import 'listVewBase.dart';
 
 class HomeTwo extends StatelessWidget {
   const HomeTwo({Key? key}) : super(key: key);

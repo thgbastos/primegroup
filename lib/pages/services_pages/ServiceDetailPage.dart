@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter3/components/bottom_nav_bar.dart';
 
 class ServiceDetailPage extends StatefulWidget {
   final String serviceName;
@@ -17,15 +18,6 @@ class ServiceDetailPage extends StatefulWidget {
 }
 
 class _ServiceDetailPageState extends State<ServiceDetailPage> {
-
-  int _selectedIndex = 0; // Índice da aba selecionada
-
-  // Função para mudar de aba - Menu Rodapé
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -116,42 +108,7 @@ class _ServiceDetailPageState extends State<ServiceDetailPage> {
       ),
 
       //Barra de Navegação de Rodapé
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          color: Color(0xff226690), // Cor de fundo da barra
-        ),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-
-          child: BottomNavigationBar(
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'Search',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.book),
-                label: 'Booking',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Profile',
-              ),
-            ],
-            currentIndex: _selectedIndex,
-            selectedItemColor: Color(0xff226690), // Cor do item selecionado
-            unselectedItemColor: Colors.grey, // Cor dos itens não selecionados
-            onTap: _onItemTapped, // Atualiza o índice ao clicar
-          ),
-        )
-      )
+      bottomNavigationBar: const BottomNavBar()
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter3/appController.dart';
-import 'package:flutter3/homeTwo.dart';
+import 'package:flutter3/controllers/appController.dart';
+import 'package:flutter3/old_pages/homeTwo.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

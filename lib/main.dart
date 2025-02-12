@@ -1,9 +1,26 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter3/myapp.dart';
+import 'package:flutter3/pages/booking_pages/booking_page.dart';
+import 'package:flutter3/pages/profile_pages/profile_page.dart';
+import 'package:flutter3/pages/search_pages/search_page.dart';
 import 'package:flutter3/start_page.dart';
 
+import 'package:flutter3/pages/home/home_page.dart';
+import 'package:flutter3/pages/login/login_page.dart';
+
 void main() {
-  runApp(const StartPage());
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/', // Página inicial
+      routes: {
+        '/': (context) => const StartPage(),
+        '/login': (context) => const LoginPage(),
+        '/home': (context) => const HomePage(),
+        '/search': (context) => const SearchPage(),
+        '/booking':(context) => const BookingPage(),
+        '/profile':(context) => const ProfilePage()
+      },
+    )
+  );
 }
 
 /*

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'services/ServiceDetailPage.dart';
+import '../../components/bottom_nav_bar.dart';
+import '../services_pages/ServiceDetailPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,8 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  int _selectedIndex = 0; // Índice da aba selecionada
-
+  //Informações dos serviços
   final List<Map<String, String>> services = [
     {'service': 'Eletric', 'img': 'assets/images/eletric.webp', 'description': 'Our skilled electricians are here to handle all your electrical needs, from installations to repairs, ensuring safety and efficiency in every project.'},
     {'service': 'Plumber', 'img': 'assets/images/plumber.webp', 'description' : 'From fixing leaks to installing new systems, our plumbing experts deliver reliable solutions for your home or business.'},
@@ -21,12 +21,6 @@ class _HomePageState extends State<HomePage> {
     {'service': 'Pool', 'img': 'assets/images/pool.jpeg', 'description' : 'Our pool experts provide maintenance, cleaning, and repair services to keep your pool crystal clear and ready for use year-round.'},
   ];
 
-  // Função para mudar de aba
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -185,54 +179,9 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      //Barra de navegação de rodapé
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          color: Colors.white, // Cor de fundo da barra
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20), // Arredonda o canto superior esquerdo
-            topRight: Radius.circular(20), // Arredonda o canto superior direito
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26, // Sombra para destacar a barra
-              blurRadius: 5,
-              spreadRadius: 1,
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
 
-        child: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              label: 'Booking',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Color(0xff226690), // Cor do item selecionado
-          unselectedItemColor: Colors.grey, // Cor dos itens não selecionados
-          onTap: _onItemTapped, // Atualiza o índice ao clicar
-        ),
-      )
-    )
+      //Barra de navegação de rodapé
+      bottomNavigationBar: const BottomNavBar()
     );
   }
 }
