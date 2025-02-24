@@ -10,7 +10,7 @@ import 'package:flutter3/pages/login/login_page.dart';
 void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/', // Página inicial
+      initialRoute: '/home', // Página inicial
       routes: {
         '/': (context) => const StartPage(),
         '/login': (context) => const LoginPage(),
